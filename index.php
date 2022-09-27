@@ -1,4 +1,4 @@
 <?php
-echo "test";
-echo "123";
-echo 69*3;
+
+include_once 'content/header.php';
+include_once 'content/footer.php';
