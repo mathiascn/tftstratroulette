@@ -1,5 +1,18 @@
-body { 
-    /* background: url("/tftstratroulette/res/background.png") no-repeat center center fixed;  */
-    /* background: url("/res/background.png") no-repeat center center fixed;  */
+body {
+    display: flex;
     background-color: #1e1e1e;
-  }
+}
+
+.content {
+    background: url("/tftstratroulette/res/background.png") no-repeat center center fixed; 
+    /* background: url("/res/background.png") no-repeat center center fixed;  */
+    width: 50%;
+    outline:red solid;
+}
+
+.ad_space {
+    outline:red solid;
+    background-color: rgb(216, 76, 76);
+    width: 100px;
+    height: 500px;
+}
