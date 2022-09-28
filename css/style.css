@@ -1,18 +1,56 @@
 body {
-    display: flex;
     background-color: #1e1e1e;
 }
 
+.wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    height: 3000px;
+}
+section {
+    box-shadow: 3px 5px 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid #6a5831;
+    outline-offset: -4px;
+    outline: 2px solid#1f3f40;
+}
+.row {
+    display: flex;
+}
+.zeplin {
+    width: 70%;
+    height:140px;
+}
 .content {
-    background: url("/tftstratroulette/res/background.png") no-repeat center center fixed; 
     /* background: url("/res/background.png") no-repeat center center fixed;  */
-    width: 50%;
-    outline:red solid;
+    width: 70%;
+    background: url("/tftstratroulette/res/bg3.png") no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+.ad_space {
+    background-color: #172020
+}
+.corner,.skyscraper {
+    width: 15%;
+    box-shadow: none;
+}
+.main_row {
+    min-height: 100vh;
 }
 
-.ad_space {
-    outline:red solid;
-    background-color: rgb(216, 76, 76);
-    width: 100px;
-    height: 500px;
+/* ----------- DIFFICULTY ----------- */
+.difficulty_container {
+    display: flex;
+}
+.d_btn {
+    outline:1px solid red;
+    height: 100px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+.d_btn>img {
+    height: 100px;
 }
