@@ -1,45 +1,46 @@
+:root {
+    --black: #1e1e1e;
+    --outer_border:#6a5831;
+    --inner_border:#1f3f40;
+    --ui_bg:#172020;
+}
 body {
-    background-color: #1e1e1e;
+    background-color: var(--black);
 }
-
-.wrapper {
-    max-width: 1500px;
-    margin: 0 auto;
-    height: 3000px;
-}
-section {
+.app {
+    /* background: url("/tftstratroulette/res/bg3.png") no-repeat 50% -10% fixed; */
+    background: url("/res/bg3.png") no-repeat 50% -10% fixed;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    max-width: 1010px;
+    margin:0 auto;
+    position: relative;
     box-shadow: 3px 5px 5px;
-    margin: 5px;
     border-radius: 5px;
-    border: 2px solid #6a5831;
+    border: 2px solid var(--outer_border);
     outline-offset: -4px;
-    outline: 2px solid#1f3f40;
+    outline: 2px solid var(--inner_border);
+}
+.ad_space {
+    background-color: var(--ui_bg);
+    width: 180px;
+    height: 100%;
+    position: absolute;
+    /* background-image: url("/tftstratroulette/res/ad.jpg"); */
+    background-image: url("/res/ad.jpg");
+}
+.r_ad {
+    right:-185px;
+}
+.l_ad {
+    left:-185px;
+}
+.main_container {
+    height: 3000px;
 }
 .row {
     display: flex;
 }
-.zeplin {
-    width: 70%;
-    height:140px;
-}
-.content {
-    /* background: url("/res/background.png") no-repeat center center fixed;  */
-    width: 70%;
-    background: url("/tftstratroulette/res/bg3.png") no-repeat center center fixed;
-    background-repeat: no-repeat;
-    background-size: 60%;
-}
-.ad_space {
-    background-color: #172020
-}
-.corner,.skyscraper {
-    width: 15%;
-    box-shadow: none;
-}
-.main_row {
-    min-height: 100vh;
-}
-
 /* ----------- DIFFICULTY ----------- */
 .difficulty_container {
     display: flex;
