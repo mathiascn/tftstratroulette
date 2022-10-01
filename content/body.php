@@ -34,7 +34,17 @@
                 </div>
             </div>
         </div>
-        <div class="disclaimer_container">
-            <p>TFTSTRATROULETTE.COM isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
-        </div>
+    </div>
 </div>
+<div class="footer">
+    <div class="footer_disclaimer">TFTSTRATROULETTE.COM isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</div>
+</div>
+<script type="application/javascript">
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    var strats = ["Copy cat, contest who ever is in first place.","Can only buy 1 unit per shop","Always pick the middle augument"];
+    $('.refresh_btn').on("click",function(){
+        $(".output_container").html(strats[getRandomInt(3)]);
+    });
+</script>
