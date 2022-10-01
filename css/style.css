@@ -138,6 +138,7 @@ body {
     position: absolute;
     top:0;
     background-color: #081018;
+    z-index:-1;
 }
 .refresh_icon {
     font-family:Lucida Sans Unicode;
