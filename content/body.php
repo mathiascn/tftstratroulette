@@ -22,8 +22,8 @@
         </div>
         <div class="row">
             <div class="output_container"><?php
-            $test = $db->query('SHOW tables;')->fetchArray();
-            var_dump($test);
+            // $test = $db->query('SHOW tables;')->fetchArray();
+            // var_dump($test);
             ?></div>
         </div>
         <div class="row">
