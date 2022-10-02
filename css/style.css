@@ -14,7 +14,7 @@ body {
     font-family:var(--font1);
     color:var(text);
 }
-.app,.difficulty_container,.header_container,.output_container,.refresh_container,.disclaimer_container {
+.difficulty_container,.output_container,.refresh_container,.disclaimer_container {
     border-radius: 5px;
     border: 2px solid var(--outer_border);
     outline-offset: -4px;
@@ -28,8 +28,9 @@ body {
     max-width: 1010px;
     margin:0 auto;
     position: relative;
-    box-shadow: 3px 5px 5px;
-    /* z-index: -50; */
+    box-shadow: 3px 3px 5px;
+    border-left:1px solid#1b2e2e;
+    height: 1500px;
 }
 .ad_space {
     background-color: var(--ui_bg);
@@ -45,9 +46,6 @@ body {
 .l_ad {
     left:-195px;
 }
-.main_container {
-    height: 1500px;
-}
 .row {
     display: flex;
 }
@@ -55,31 +53,63 @@ body {
     width: 100%;
     text-align: center;
     background-color: var(--ui_bg);
-    padding: 10px;
+    padding-top:10px;
 }
 .header {
-    font-family:beaufort;
-    font-size:48px;
+    /* font-family:beaufort; */
+    font-size:40px;
     color:var(--text);
+}
+.navmenu {
+    margin-top: 10px;
+    border-top:1px solid#1b2e2e;
+    border-bottom:1px solid#1b2e2e;
+    background-color: #172626;
+    height: 40px;
+    color: white;
+}
+.navlinks {
+    max-width: 1010px;
+    margin:0 auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.navlink {
+    font-size: 12px;
+    font-weight: bold;
+    margin:15px 10px;
+    cursor:pointer;
+    user-select: none;
 }
 .output_container {
     min-width: 80%;
     min-height: 200px;
     margin:0 auto;
     background: var(--ui_bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
 .footer {
+    border-top:1px solid#1b2e2e;
     background-color: var(--ui_bg);
     color:white;
     padding-top: 30px;
     display: flex;
     justify-content: center;
+    margin-top: 30px;
 }
 .footer_disclaimer {
     max-width: 950px;
     margin-bottom:30px;
     font-size: 14px;
+}
+.login_container {
+    display: none;
+    height: 1000px;
 }
 /* ----------- DIFFICULTY ----------- */
 .difficulty_container {
@@ -89,19 +119,83 @@ body {
     margin:50px auto;
 }
 .d_btn {
-    aspect-ratio: 3/2;
-    height: 90px;
+    aspect-ratio: 1.333333333333333333/1;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    border:1px solid black;
+    box-shadow: inset 0 0 2px white;
+    cursor: pointer;
+}
+.d_btn_img {
+    height: 81%;
+    box-shadow: inset 0 0 5px black;
+    margin: 3px;
     display: flex;
     justify-content: center;
-    margin: 2px;
-    background:linear-gradient(var(--ui_bg_light),var(--ui_bg));
-    border:1px solid black;
+    align-items: center; 
 }
-.d_btn>img {
-    height: 100px;
+.d1 {
+    background:linear-gradient(-45deg,#1d537b,#1b2048);
+}
+.d1>.d_btn_img {
+    background: linear-gradient(-45deg, #48377b, #544993, #230d36);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+}
+.d2 {
+    background:linear-gradient(-45deg,#ab087e,#470d49);
+}
+.d2>.d_btn_img {
+    background: linear-gradient(-45deg, #1a3340, #297286, #98761c);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+}
+.d3 {
+    background:linear-gradient(-45deg,#ac7019,#653f09);
+}
+.d3>.d_btn_img {
+    background: linear-gradient(-45deg, #dc7a14,#4ad899, #39dc82);
+	background-size: 300% 300%;
+	animation: gradient 30s ease infinite;
+}
+.d_btn_bot {
+    height: 19%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    font-weight: bold;
+    color:white;
+    text-shadow: 0 0 1px white;
+    font-size: 12px;
+    /* box-shadow: inset 0 -1px 10px 0.1px white; */
+
+}
+.d_btn_img>img {
+    height: 91.2px;
 }
 
 /* ----------- REFRESH ----------- */
+
+.refresh_btn:hover .refresh_btn_r {
+    background: linear-gradient(#403926,#242214);
+}
+.refresh_btn:active .refresh_btn_r {
+    background: linear-gradient(#36301f,#1c1a10);
+}
+.refresh_btn:hover .refresh_btn_l {
+    background-color:#22241d;
+}
+.refresh_btn:active .refresh_btn_l {
+    background-color: #1a1c16;
+}
+.refresh_btn:hover .refresh_btn_triangle {
+    border-bottom: 110px solid #22241d;
+}
+.refresh_btn:active .refresh_btn_triangle {
+    border-bottom: 110px solid #1a1c16;
+}
 
 .refresh_btn {
     margin:50px auto;
@@ -166,4 +260,15 @@ body {
     color:#816d3f;
     text-shadow: 1px 0 #816d3f;
     cursor: pointer;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
