@@ -12,14 +12,8 @@
 body {
     background-color: var(--ui_bg);
     font-family:var(--font1);
-    color:var(text);
 }
-.difficulty_container,.output_container,.refresh_container,.disclaimer_container {
-    border-radius: 5px;
-    border: 2px solid var(--outer_border);
-    outline-offset: -4px;
-    outline: 2px solid var(--inner_border);
-}
+
 .app {
     /* background: url("/tftstratroulette/res/bg3.png") no-repeat 50% 0 fixed; */
     /* background: url("/res/bg3.png") no-repeat 50% -10% fixed; */
@@ -81,17 +75,12 @@ body {
     margin:15px 10px;
     cursor:pointer;
     user-select: none;
+    color:#4e7979;
 }
-.output_container {
-    min-width: 80%;
-    min-height: 200px;
-    margin:0 auto;
-    background: var(--ui_bg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+.navlink#admin{
+    display: none;
 }
+
 
 .footer {
     border-top:1px solid#1b2e2e;
@@ -107,16 +96,129 @@ body {
     margin-bottom:30px;
     font-size: 14px;
 }
+.main_container {
+    /* display: none; */
+}
+.admin_container {
+    display: none;
+    height: 1000px;
+}
+/* ----------- OUTPUT ----------- */
+.output_container {
+    min-width: 80%;
+    min-height: 200px;
+    margin:0 auto;
+    background: var(--ui_bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+.output_top {
+    border-top:1px solid#1b2e2e;
+    background: linear-gradient(#172626,var(--ui_bg));
+    height: 30px;
+    width: 100%;
+}
+.output_bot {
+    border-bottom:1px solid#1b2e2e;
+    background: linear-gradient(var(--ui_bg),#172626);
+    height: 30px;
+    width: 100%;
+}
+.output_content {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+/* ----------- LOGIN ----------- */
 .login_container {
     display: none;
     height: 1000px;
 }
+.login {
+    /* background-color: red; */
+    margin:0 auto;
+    padding-top: 100px;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login_response {
+    padding: 5px;
+    color:white;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.failure_response {
+    background-color: rgba(136, 12, 12, 0.938);
+    border: 1.5px solid rgba(175, 25, 25, 0.938);
+    
+}
+.success_response {
+    background-color: rgba(26, 136, 12, 0.938);
+    border: 1.5px solid rgba(55, 175, 25, 0.938);
+}
+.login input {
+    height: 26px;
+    width: 300px;
+    border:1px solid#1b2e2e;
+    background-color: #172626;
+    color:white;
+    padding: 5px 5px 5px 20px;
+    margin: 10px;
+}
+
+.login input:focus {
+    outline:none;
+}
+.login_btn {
+    margin-top:5px;
+    width: 325px;
+    height: 36px;
+    border:1px solid#1b2e2e;
+    background-color: #172626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-size: 12px;
+    user-select: none;
+    cursor: pointer;
+}
+
 /* ----------- DIFFICULTY ----------- */
 .difficulty_container {
     display: flex;
     background-color: var(--ui_bg);
     padding: 20px;
     margin:50px auto;
+    border-bottom:1px solid#1f3535;
+}
+.d_btn_container {
+    width: 162px;
+    height: 122px;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d_btn_container.selected {
+    background: linear-gradient(-45deg, white,var(--ui_bg),white,var(--ui_bg));
+    background-size: 600% 600%;
+    animation: gradient 15s ease infinite;
 }
 .d_btn {
     aspect-ratio: 1.333333333333333333/1;
@@ -126,6 +228,7 @@ body {
     border:1px solid black;
     box-shadow: inset 0 0 2px white;
     cursor: pointer;
+    user-select: none;
 }
 .d_btn_img {
     height: 81%;

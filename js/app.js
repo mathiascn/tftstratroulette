@@ -32,8 +32,32 @@ var strats = [
     "Win the game with less than 10 hp",
     "Anti interest, stay below 10 gold every round"
 ];
+
+function update_session() {
+    $.post( "api.php", { session: "1"},function(data){
+        const json_response = data;
+        const obj = JSON.parse(json_response);
+        if (obj.response !== "success") return;
+        $(".login_form").css("display","none");
+        $(".login_response").addClass("success_response");
+        $(".login_response").html("You're logged in as "+obj.username);
+        if (obj.admin == 1) {
+            $(".navlink#admin").css("display","block");
+        }
+    });
+}
+
 $('.refresh_btn').on("click",function(){
-    $(".output_container").html(strats[getRandomInt(strats.length)]);
+    $.post( "api.php", { dif: $('#dif').val()},function(data){
+        const json_response = data;
+        const obj = JSON.parse(json_response);
+        if (obj.response !== "success") return;
+        $('.output_content').html("");
+        Array.from(obj.rows).forEach(function(currVal,i){
+            let index = i+1;
+            $('.output_content').append(`${index}: ${currVal.description}<br><br>`);
+        });
+    });
 });
 
 $('.navlink').on("click",function(){
@@ -41,4 +65,36 @@ $('.navlink').on("click",function(){
         $('.'+currVal.id+'_container').css("display","none");
     });
     $('.'+this.id+'_container').css("display","block");
+});
+$('.d_btn_container').on("click",function(){
+    Array.from($('.d_btn_container')).forEach(function(currVal){
+        $(currVal).removeClass("selected");
+    });
+    $(this).addClass("selected");
+    $("#dif").val($(this).attr("data-value"));
+});
+
+$('.login_btn').on("click",function(){
+    $.post( "api.php", { username: $('#username').val(), password: $('#password').val()},function(data){
+        const json_response = data;
+        const obj = JSON.parse(json_response);
+        if (obj.response == "success") return update_session();
+        $(".login_response").addClass("failure_response");
+        $(".login_response").html("Our border patrol rejected your paper, check your email and password");
+    });
+});
+
+$('.navlink#admin').on("click",function(){
+    $.post( "api.php", { adminpage: ""},function(data){
+        const json_response = data;
+        const obj = JSON.parse(json_response);
+        $('.admin_container').html("");
+        Array.from(obj.rows).forEach(function(currVal){
+            $('.admin_container').append(`<div>${currVal.description}</div>`);
+        });
+    });
+});
+
+$(document).ready(function(){
+    update_session();
 });
