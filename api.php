@@ -61,3 +61,8 @@ function get_strats($dif) {
 if (isset($_POST['dif'])) {
     echo get_strats($_POST['dif']);
 }
+
+if (isset($_POST['logout'])) {
+    echo "logging out";
+    session_destroy();
+}

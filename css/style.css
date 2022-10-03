@@ -61,6 +61,7 @@ body {
     background-color: #172626;
     height: 40px;
     color: white;
+
 }
 .navlinks {
     max-width: 1010px;
@@ -77,10 +78,31 @@ body {
     user-select: none;
     color:#4e7979;
 }
-.navlink#admin{
+.navlink#admin {
     display: none;
 }
+.nav_userinfo {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
 
+.logoutbtn {
+    width: 75px;
+    height: 30px;
+    position: absolute;
+    top: 25px;
+    right:0;
+    background-color:var(--ui_bg);
+    border:1px solid#1b2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    display: none;
+}
 
 .footer {
     border-top:1px solid#1b2e2e;

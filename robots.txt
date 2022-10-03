@@ -1,1 +1,3 @@
 User-agent: *
+Disallow: /privacy_policy.txt
+Disallow: /api.php

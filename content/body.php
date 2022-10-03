@@ -5,6 +5,10 @@
             <div class="navlink" id="main">APP</div>
             <div class="navlink" id="login">SIGN IN</div>
             <div class="navlink" id="admin">ADMIN</div>
+            <div class="nav_userinfo">
+                <div class="nav_username"></div>
+                <div class="logoutbtn">Logout</div>
+            </div>
         </div>
     </div>
 </div>
@@ -18,7 +22,7 @@
                 <div class="d_btn_container" data-value="0">
                     <div class="d_btn d1">
                         <div class="d_btn_img">
-                            <img src="/res/d1.png" alt="easy_difficulty">
+                            <img src="/tftstratroulette/res/d1.png" alt="easy_difficulty">
                         </div>
                         <div class="d_btn_bot">
                             <p>Easy</p>
@@ -28,7 +32,7 @@
                 <div class="d_btn_container" data-value="1">
                     <div class="d_btn d2">
                     <div class="d_btn_img">
-                            <img src="/res/d2.png" alt="medium_difficulty">
+                            <img src="/tftstratroulette/res/d2.png" alt="medium_difficulty">
                         </div>
                         <div class="d_btn_bot">
                             <p>Medium</p>
@@ -38,7 +42,7 @@
                 <div class="d_btn_container" data-value="2">
                     <div class="d_btn d3">
                         <div class="d_btn_img">
-                            <img src="/res/d3.png" alt="hard_difficulty">
+                            <img src="/tftstratroulette/res/d3.png" alt="hard_difficulty">
                         </div>
                         <div class="d_btn_bot">
                             <p>Hard</p>
