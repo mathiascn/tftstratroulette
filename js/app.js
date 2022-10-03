@@ -40,11 +40,13 @@ function update_session() {
         if (obj.response == "success") {
             $(".login_form").css("display","none");
             $(".nav_userinfo").css("display","block");
+            $("#login").css("display","none");
             $(".nav_username").html(`Logged in as <b>${obj.username}</b>`);
             if (obj.admin == 1) $(".navlink#admin").css("display","block");
         } else {
             $(".login_form").css("display","flex");
             $(".nav_userinfo").css("display","none");
+            $("#login").css("display","block");
             $(".nav_username").html(``);
             $(".navlink#admin").css("display","none");
         }
@@ -83,7 +85,12 @@ $('.login_btn').on("click",function(){
         const json_response = data;
         const obj = JSON.parse(json_response);
         console.log(obj.response);
-        if (obj.response == "success") return update_session();
+        if (obj.response == "success") {
+            $(".login_container").css("display","none");
+            $(".main_container").css("display","block");
+            update_session();
+            return;
+        }
         $(".login_response").addClass("failure_response");
         $(".login_response").html("Our border patrol rejected your paper, check your email and password");
     });
@@ -93,10 +100,10 @@ $('.navlink#admin').on("click",function(){
     $.post( "api.php", { adminpage: ""},function(data){
         const json_response = data;
         const obj = JSON.parse(json_response);
-        $('.admin_container').html("");
-        Array.from(obj.rows).forEach(function(currVal){
-            $('.admin_container').append(`<div>${currVal.description}</div>`);
-        });
+        //$('.admin_container').html("");
+        // Array.from(obj.rows).forEach(function(currVal){
+        //     $('.admin_container').append(`<div>${currVal.description}</div>`);
+        // });
     });
 });
 
@@ -112,8 +119,15 @@ $('.nav_userinfo').on("click",function(){
 });
 $('.logoutbtn').on("click",function(){
     $.post( "api.php", { logout: ""},function(data){
-        const json_response = data;
-        const obj = JSON.parse(json_response);
         update_session();
+    });
+});
+
+$('.strat_insert_btn').on("click",function(data){
+    let strats = $('[name=strat_insert_text]').val().split('\n');
+    let json_obj = JSON.stringify(strats);
+    $('[name=strat_insert_text]').val('');
+    $.post( "api.php", { insert_strats: json_obj},function(data){
+        console.log(data);
     });
 });

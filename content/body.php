@@ -81,7 +81,10 @@
         </div>
     </div>
     <div class="admin_container">
-
+        <div class="strat_insert_container">
+            <textarea name="strat_insert_text" placeholder="1. Paste strats separated by new line&#10;2.&#10;3.&#10;4..." cols="50" rows="10"></textarea>
+            <div class="strat_insert_btn">Insert strats</div>
+        </div>
     </div>
 </div>
 <div class="footer">

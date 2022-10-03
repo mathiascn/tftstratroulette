@@ -13,7 +13,18 @@ body {
     background-color: var(--ui_bg);
     font-family:var(--font1);
 }
-
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 .app {
     /* background: url("/tftstratroulette/res/bg3.png") no-repeat 50% 0 fixed; */
     /* background: url("/res/bg3.png") no-repeat 50% -10% fixed; */
@@ -102,6 +113,7 @@ body {
     align-items: center;
     border-radius: 3px;
     display: none;
+    z-index: 50;
 }
 
 .footer {
@@ -119,11 +131,35 @@ body {
     font-size: 14px;
 }
 .main_container {
-    /* display: none; */
+    display: none;
 }
 .admin_container {
-    display: none;
+    /* display: none; */
     height: 1000px;
+}
+
+[name=strat_insert_text]:focus {
+    outline: none;
+}
+[name=strat_insert_text] {
+    background-color: #172626;
+    border:1px solid #1b2e2e;
+    color: white;
+    resize: none;
+    border-radius: 2px;
+}
+.strat_insert_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+}
+.strat_insert_btn {
+    padding:0 31.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* ----------- OUTPUT ----------- */
 .output_container {
@@ -206,7 +242,7 @@ body {
 .login input:focus {
     outline:none;
 }
-.login_btn {
+.login_btn,.strat_insert_btn {
     margin-top:5px;
     width: 325px;
     height: 36px;

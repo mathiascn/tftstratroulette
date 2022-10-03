@@ -63,6 +63,19 @@ if (isset($_POST['dif'])) {
 }
 
 if (isset($_POST['logout'])) {
-    echo "logging out";
     session_destroy();
+}
+
+function insert_strats($strats) {
+    global $db;
+    if (!isset($_SESSION)) return;
+    if ($_SESSION['user']['admin']!== 1) return;
+    $obj = json_decode($strats,true);
+    foreach ($obj as $value) {
+        $db->query('INSERT INTO strats (time,description,contributor) VALUES (UNIX_TIMESTAMP(),?,"tftstrat")',$value);
+    }
+}
+
+if (isset($_POST['insert_strats'])) {
+    insert_strats($_POST['insert_strats']);
 }
