@@ -131,10 +131,10 @@ body {
     font-size: 14px;
 }
 .main_container {
-    display: none;
+    /* display: none; */
 }
 .admin_container {
-    /* display: none; */
+    display: none;
     height: 1000px;
 }
 
