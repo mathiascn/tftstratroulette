@@ -54,13 +54,15 @@
         <div class="row">
             <div class="output_container">
                 <div class="output_top"></div>
-                <div class="output_content">Click the refresh button to pick a strategy</div>
+                <div class="output_content"></div>
                 <div class="output_bot"></div>
             </div>
         </div>
         <div class="row">
             <div class="refresh_btn">
-                <div class="refresh_btn_l"></div>
+                <div class="refresh_btn_l">
+                    Refresh
+                </div>
                 <div class="refresh_btn_triangle"></div>
                 <div class="refresh_btn_border"></div>
                 <div class="refresh_btn_triangle_border"></div>

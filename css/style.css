@@ -33,7 +33,7 @@ body {
     max-width: 1010px;
     margin:0 auto;
     position: relative;
-    box-shadow: 3px 3px 5px;
+    box-shadow: 1px 1px 3px;
     border-left:1px solid#1b2e2e;
     height: 1500px;
 }
@@ -44,6 +44,7 @@ body {
     position: absolute;
     background-image: url("/tftstratroulette/res/ad.jpg");
     /* background-image: url("/res/ad.jpg"); */
+    display: none;
 }
 .r_ad {
     right:-195px;
@@ -174,23 +175,23 @@ body {
     color: white;
 }
 .output_top {
-    border-top:1px solid#1b2e2e;
-    background: linear-gradient(#172626,var(--ui_bg));
+    /* border-top:1px solid#1b2e2e; */
+    /* background: linear-gradient(#172626,var(--ui_bg)); */
     height: 30px;
     width: 100%;
 }
 .output_bot {
-    border-bottom:1px solid#1b2e2e;
-    background: linear-gradient(var(--ui_bg),#172626);
+    /* border-bottom:1px solid#1b2e2e; */
+    /* background: linear-gradient(var(--ui_bg),#172626); */
     height: 30px;
     width: 100%;
 }
 .output_content {
     width: 100%;
     min-height: 200px;
+    max-width: 590px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
     font-size: 25px;
 }
 /* ----------- LOGIN ----------- */
@@ -269,6 +270,7 @@ body {
     width: 162px;
     height: 122px;
     padding: 1px;
+    margin:10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -376,6 +378,16 @@ body {
     width: 40%;
     height: 100%;
     cursor: pointer;
+    user-select: none;
+    color: white;
+    font-size: 24px;
+    font-family: Beaufort;
+    font-weight: bold;
+    text-shadow: 0 0 2px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 .refresh_btn_triangle {
     width: 0;
